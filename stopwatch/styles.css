@@ -1,0 +1,157 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--background-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    transition: background-color 0.3s;
+  }
+  
+  :root {
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --button-color: #32CD32;
+    --button-hover-color: #228B22;
+  }
+  
+  body.light-mode {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --button-color: #007AFF;
+    --button-hover-color: #005BBB;
+  }
+  
+  .dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .timer {
+    background: #1c1c1e;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    color: var(--text-color);
+  }
+  
+  body.light-mode .timer {
+    background: #f2f2f7;
+    color: var(--text-color);
+  }
+  
+  .time-display {
+    font-size: 72px;
+    font-weight: 200;
+    color: var(--text-color);
+  }
+  
+  .progress-bar {
+    height: 5px;
+    background: #1646c9;
+    border-radius: 10px;
+    margin: 20px 0;
+    overflow: hidden;
+  }
+  
+  .progress-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #32CD32;
+    transition: width 0.1s;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .button {
+    background: var(--button-color);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+    padding: 10px 30px;
+    margin: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+  
+  .button:disabled {
+    background: #555555;
+    cursor: not-allowed;
+  }
+  
+  .button:hover:not(:disabled) {
+    background: var(--button-hover-color);
+  }
+  
+  .laps {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .lap {
+    background: #2c2c2e;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    color: var(--text-color);
+  }
+  
+  body.light-mode .lap {
+    background: #e5e5ea;
+    color: var(--text-color);
+  }
+  
